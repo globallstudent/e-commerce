@@ -1,0 +1,20 @@
+ 8512  uv run manage.py migrate
+ 8513  uv run manage.py runserver
+ 8514* uv run manage.py createsuperuser
+ 8515  clear
+ 8516  uv run manage.py startapp orders
+ 8517  uv run manage.py startapp payments
+ 8518  uv run manage.py startapp products
+ 8519* clear
+ 8520  uv run manage.py runserver
+ 8521  uv run manage.py makemigrations
+ 8522  uv run manage.py migrate
+ 8523  uv run manage.py runserver
+ 8524  clear
+ 8525  uv run manage.py makemigrations
+ 8526  uv run manage.py migrate
+ 8527  uv run manage.py makemigrations
+ 8528  ls
+ 8529  uv run manage.py makemigrations
+ 8530  uv run manage.py migrate
+ 8531  uv run manage.py makemigrations

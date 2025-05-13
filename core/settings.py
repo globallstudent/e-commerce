@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "accounts.User"
+
 
 # Application definition
 
@@ -44,8 +46,11 @@ DJANGO_APPS = [
 ]
 
 LOCAL_APPS = [
-    'accounts',
     'common',
+    'accounts',
+    'products',
+    'orders',
+    'payments',
 ]
 
 EXTERNAL_APPS = [
@@ -137,10 +142,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'static',
 ]
 
-MEDIA_URl = '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
