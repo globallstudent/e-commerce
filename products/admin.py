@@ -39,6 +39,8 @@ class SizeAdmin(admin.ModelAdmin):
     search_fields = ("name",)
 
 
+
+
 @admin.register(Color)
 class ColorAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
