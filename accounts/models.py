@@ -11,7 +11,7 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
     phone_number = models.CharField(max_length=20, null=True, blank=True)
     first_name = models.CharField(max_length=30, null=True, blank=True)
     last_name = models.CharField(max_length=30, null=True, blank=True)
-    avatar = models.ImageField(upload_to='avatars', null=True, blank=True)
+    avatar = models.ImageField(upload_to="avatars", null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -23,7 +23,7 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
 
     def __str__(self):
         return self.email
-    
+
 
 class Cart(BaseModel):
     user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)
@@ -34,7 +34,9 @@ class Cart(BaseModel):
 
 class CartItem(BaseModel):
     cart = models.ForeignKey(Cart, on_delete=models.RESTRICT, null=True, blank=True)
-    product = models.ForeignKey('products.ProductVariant', on_delete=models.RESTRICT, null=True, blank=True)
+    product = models.ForeignKey(
+        "products.ProductVariant", on_delete=models.RESTRICT, null=True, blank=True
+    )
     quantity = models.IntegerField(null=False, blank=False)
 
     def __str__(self):
