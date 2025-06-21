@@ -1,10 +1,9 @@
 from rest_framework.generics import DestroyAPIView
 from rest_framework import permissions
 
-from products.models import Size
+from products.models import Color
 
 
-class SizeDeleteAPIView(DestroyAPIView):
-    queryset = Size.objects.all()
+class ColorDeleteAPIView(DestroyAPIView):
+    queryset = Color.objects.all()
     permission_classes = [permissions.IsAuthenticated]
-    lookup_field = 'pk'

@@ -6,7 +6,4 @@ from products.models import Size
 class SizeCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Size
-        fields = [
-            "name",
-            "slug",
-        ]
+        fields = ["name", "slug"]
