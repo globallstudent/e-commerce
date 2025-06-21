@@ -68,3 +68,5 @@ class CartAdmin(admin.ModelAdmin):
     search_fields = ("user",)
 
     inlines = [CartItemInline]
+
+
