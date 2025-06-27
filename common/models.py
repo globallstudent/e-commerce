@@ -7,6 +7,6 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ['-created_at']
-        verbose_name = "Base Model"
-        verbose_name_plural = "Base Models"
+
+class MediaFile(models.Model):
+    file = models.FileField(upload_to='files/')

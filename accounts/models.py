@@ -23,3 +23,14 @@ class User(AbstractBaseUser, PermissionsMixin, BaseModel):
     def __str__(self):
         return self.email
     
+
+class Cart(BaseModel):
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        return self.user
+    
+class CartItem(BaseModel):
+    cart = models.ForeignKey(Cart, on_delete=models.RESTRICT, null=True, blank=True)
+    product = models.ForeignKey('products.ProductVariant', on_delete=models.RESTRICT, null=True, blank=True)
+    quantity = models.PositiveIntegerField(null=False, blank=False)

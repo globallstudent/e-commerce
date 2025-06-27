@@ -48,6 +48,9 @@ DJANGO_APPS = [
 
 LOCAL_APPS = [
     'accounts',
+    'products',
+    'orders',
+    'payments', 
     'common',
 ]
 
